@@ -105,7 +105,7 @@
       <p>Highlighting Specific Authors:</p>
         <button @click="styleAuthors = !styleAuthors">Toggle Author Styles</button>
         <ul>
-          <li v-for="author in authors" :key="author.id" :style="styleAuthors ? { color: textColor, fontWeight: 'bold', backgroundColor: highlightBgColor } : {}">
+          <li v-for="author in authors" :key="author.id" :style="styleAuthors && author.name === 'George Orwell' ? { color: textColor, fontWeight: 'bold', backgroundColor: highlightBgColor } : {}">
             {{ author.name }}
           </li>
         </ul>
